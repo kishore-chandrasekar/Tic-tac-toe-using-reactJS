@@ -21,14 +21,16 @@ function App() {
         updateGameState(clearState)
     }
     useEffect(() => {
+        const checkWinner = () => {
+
         let winner = checkWinner();
         if (winner) {
             clearGame();
             alert(`Congratulations ${winner} won the Game !`)
         }
         
-        
-    }, [gameState])
+    } 
+    }, [gameState]);
     
 
     
