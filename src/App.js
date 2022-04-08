@@ -16,24 +16,23 @@ function App() {
         updateIsXChance(!isXChance)
         updateGameState(strings)
     }
-    
+
     const clearGame = () => {
         updateGameState(clearState)
     }
     useEffect(() => {
-        const checkWinner = () => {
-
         let winner = checkWinner();
+      // eslint-disable-next-line react-hooks/exhaustive-deps
         if (winner) {
             clearGame();
             alert(`Congratulations ${winner} won the Game !`)
         }
-        
-    } 
-    }, [gameState]);
-    
 
-    
+
+    }, [gameState]);
+
+
+
     const checkWinner = () => {
         const lines = [
             [0, 1, 2],
@@ -45,7 +44,7 @@ function App() {
             [0, 4, 8],
             [2, 4, 6],
         ];
-       
+
         for (let i = 0; i < lines.length; i++) {
             const [a, b, c] = lines[i];
             if (gameState[a] && gameState[a] === gameState[b] && gameState[a] === gameState[c]) {
@@ -55,7 +54,7 @@ function App() {
         }
         return null;
     }
-   
+
 
     return (
         <div className="app-header">
