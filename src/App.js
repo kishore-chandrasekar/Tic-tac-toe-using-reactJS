@@ -15,7 +15,7 @@ function App() {
         updateIsXChance(!isXChance)
         updateGameState(strings)
     }
-    console.log(gameState)
+    
     const clearGame = () => {
         updateGameState(clearState)
     }
@@ -30,7 +30,7 @@ function App() {
     }, [gameState])
     
 
-    console.log(gameState)
+    
     const checkWinner = () => {
         const lines = [
             [0, 1, 2],
